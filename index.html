@@ -1,1 +1,303 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/portfolio/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/portfolio/logo192.png"/><link rel="manifest" href="/portfolio/manifest.json"/><title>React App</title><script defer="defer" src="/portfolio/static/js/main.5cb05038.js"></script><link href="/portfolio/static/css/main.dc859693.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrii Suprun · Full-Stack Shopify Developer</title>
+<meta name="description" content="Full-stack Shopify and Shopify Plus developer from Ukraine. 19 Shopify stores across beauty, food and drink, home, fashion and sports, plus full-stack Node.js and React projects.">
+<meta property="og:title" content="Andrii Suprun · Full-Stack Shopify Developer">
+<meta property="og:description" content="19 Shopify stores and full-stack Node.js / React projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --ink:#15211d; --muted:#5d6e68; --line:#d8e2de;
+  --accent:#0d6b58; --accent-soft:#dcefe9;
+  --f-display:"Unbounded","Onest",system-ui,sans-serif;
+  --f-body:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0f1513; --surface:#17201d; --ink:#e6eeeb; --muted:#93a59f; --line:#2a3632;
+  --accent:#5cc7ad; --accent-soft:#1d3530; color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
+  padding:0 max(18px,env(safe-area-inset-right)) 0 max(18px,env(safe-area-inset-left))}
+.wrap{max-width:1080px;margin:0 auto}
+nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0;flex-wrap:wrap}
+.logo{font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:14px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none} nav a:hover{color:var(--ink)}
+.hero{padding:56px 0 40px;display:grid;gap:22px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(32px,6vw,58px);line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance;max-width:16ch}
+.lead{font-size:18px;color:var(--muted);max-width:60ch;margin:0}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
+.btn.primary{background:var(--accent);color:var(--surface);border-color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:8px}
+.stat{border-top:2px solid var(--accent);padding-top:10px}
+.stat b{display:block;font-family:var(--f-display);font-size:28px;font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--muted)}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+h2{font-family:var(--f-display);font-size:26px;letter-spacing:-.01em;margin:0 0 6px}
+.sec{padding:40px 0;border-top:1px solid var(--line)}
+.sec > p{color:var(--muted);margin:0 0 24px;max-width:62ch}
+.group{margin-top:26px}
+.gtitle{font-size:13px;font-family:var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;font-weight:500;display:flex;gap:8px;align-items:center}
+.gtitle span{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:1px 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .15s}
+.card:hover{border-color:var(--accent)}
+.top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.card h3{margin:0;font-size:18px;font-weight:700}
+.plat{font-family:var(--f-mono);font-size:11px;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:999px;white-space:nowrap}
+.desc{margin:0;color:var(--muted);font-size:14.5px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.tags li{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--ink)}
+.link{margin-top:auto;font-family:var(--f-mono);font-size:13px;color:var(--accent);text-decoration:none;overflow-wrap:anywhere}
+.link:hover{text-decoration:underline}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.skill h3{margin:0 0 8px;font-size:16px}
+.skill p{margin:0;color:var(--muted);font-size:14.5px}
+.timeline{display:flex;flex-direction:column;gap:0;border-left:2px solid var(--line);margin-left:4px}
+.job{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:0 0 22px 20px;position:relative}
+.job::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.job h3{margin:0 0 4px;font-size:17px}
+.job p{margin:0;color:var(--muted);font-size:14.5px;max-width:64ch}
+.when{font-family:var(--f-mono);font-size:13px;color:var(--muted);padding-top:2px}
+@media (max-width:640px){.job{grid-template-columns:1fr;gap:4px}}
+.nda{color:var(--muted)}
+.gh{display:block;background:#ffffff;border:1px solid var(--line);border-radius:16px;padding:12px;overflow:hidden}
+.gh img{display:block;width:100%;height:auto}
+.contact{display:flex;flex-direction:column;gap:14px;padding:48px 0 64px}
+.contact .mail{font-family:var(--f-display);font-size:clamp(20px,4vw,34px);color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
+.contact .mail:hover{color:var(--accent)}
+footer{color:var(--muted);font-size:13px;padding:0 0 32px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="logo">Andrii <span>Suprun</span></div>
+    <ul><li><a href="#why">Why me</a></li><li><a href="#shopify">Shopify work</a></li><li><a href="#fullstack">Full-stack</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Full-Stack Shopify Developer · Ukraine · Remote</div>
+    <h1>Shopify developer with a backend engineer's head.</h1>
+    <p class="lead">I help agencies and DTC brands ship Shopify and Shopify Plus stores end to end: from a Figma file to a fast, converting storefront, plus the apps and integrations behind it. Most Shopify developers stop at the theme. I also build the Node.js side, so subscriptions, ERP sync and webhooks keep working when the store grows.</p>
+    <div class="cta">
+      <a class="btn primary" href="#shopify">See the stores</a>
+      <a class="btn" href="mailto:suprunand2016@gmail.com">suprunand2016@gmail.com</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>19</b><span>Shopify stores</span></div>
+      <div class="stat"><b>1,832</b><span>GitHub contributions this year</span></div>
+      <div class="stat"><b>5</b><span>years in development</span></div>
+      <div class="stat"><b>US · EU · UK</b><span>markets served</span></div>
+    </div>
+  </header>
+
+  <section class="sec" id="why">
+    <h2>Why teams work with me</h2>
+    <p>What you get when I join a project.</p>
+    <div class="skills">
+      <div class="skill"><h3>One person, the whole store</h3><p>Theme, product and cart UX, apps, integrations and launch. You don't need a separate frontend and backend developer for a Shopify project.</p></div>
+      <div class="skill"><h3>Integrations that don't break</h3><p>I come from financial systems: car auctions with deposits, payments and real-time bidding. Webhooks are verified, queued and idempotent, so an order is never processed twice.</p></div>
+      <div class="skill"><h3>Questions before code</h3><p>I go through the brief and ask about the edge cases first: markets, bundles, subscriptions, returns. That saves rework after launch.</p></div>
+      <div class="skill"><h3>Fast delivery</h3><p>Modern tooling, AI-assisted development and Figma-to-theme workflow. A product page or a new section ships in days, not weeks.</p></div>
+      <div class="skill"><h3>Easy to work with</h3><p>Clear English, async updates and the same time zone as Europe and Israel. I fit into agency teams and work directly with founders.</p></div>
+      <div class="skill"><h3>Built for conversion</h3><p>Bundles, quizzes, upsells, age gates, multi-currency and fast pages. Stores are judged by sales, so I build for that.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="shopify">
+    <h2>Shopify work</h2>
+    <p>DTC brands across the US, the Netherlands, the UK and the rest of Europe. Bundles, quizzes, subscriptions, age gates, B2B portals, multi-language and multi-currency storefronts.</p>
+    <section class="group"><h3 class="gtitle">Beauty & Health<span>5</span></h3><div class="grid"><article class="card">
+  <div class="top"><h3>Perfect Skin by Christie Kidd</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Store for a Beverly Hills PA-C&#x27;s three-step acne skincare line.</p>
+  <ul class="tags"><li>Bundles</li><li>skin quiz</li><li>reviews</li><li>before/after results</li><li>newsletter</li></ul>
+  <a class="link" href="https://perfectskinchristiekidd.com/" target="_blank" rel="noopener">perfectskinchristiekidd.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Fugazzi</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Amsterdam unisex perfume brand selling extraits, body and home fragrance.</p>
+  <ul class="tags"><li>Discovery sets</li><li>build-your-own set</li><li>bundles</li><li>multi-language/currency</li><li>store locator</li></ul>
+  <a class="link" href="https://fugazzifragrances.com/" target="_blank" rel="noopener">fugazzifragrances.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>éclat</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Dutch shop for collagen powders and wellness supplements (redirects to eclatbeauty.nl).</p>
+  <ul class="tags"><li>Subscriptions</li><li>bundles/multi-packs</li><li>loyalty program</li><li>reseller/B2B page</li><li>Klarna/iDEAL</li></ul>
+  <a class="link" href="https://eclatantbeauty.nl/" target="_blank" rel="noopener">eclatantbeauty.nl ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Natuurlijk Presteren</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Dutch store for natural vitamins, minerals, adaptogens and nootropics.</p>
+  <ul class="tags"><li>Bundles (yearly packs)</li><li>multi-language/country selector</li><li>reviews</li><li>downloadable guides</li></ul>
+  <a class="link" href="https://www.natuurlijkpresteren.nl/" target="_blank" rel="noopener">natuurlijkpresteren.nl ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Sansbeauté</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Dutch store for airstylers, straighteners, dryers and personal care tools.</p>
+  <ul class="tags"><li>Reviews</li><li>newsletter discount</li><li>affiliate/business pages</li><li>multiple payment methods</li></ul>
+  <a class="link" href="https://sansbeaute.com/" target="_blank" rel="noopener">sansbeaute.com ↗</a>
+</article></div></section><section class="group"><h3 class="gtitle">Food & Drink<span>3</span></h3><div class="grid"><article class="card">
+  <div class="top"><h3>Concept Cafes Coffee</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Limited-edition heavy-metal artist coffee collaborations in collectible packaging.</p>
+  <ul class="tags"><li>Shop by artist</li><li>grind options</li><li>bundles</li><li>limited drops</li><li>multi-currency selector</li></ul>
+  <a class="link" href="https://conceptcafescoffee.com" target="_blank" rel="noopener">conceptcafescoffee.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Ascenda</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Additive-free blue agave tequila soda cans and blanco tequila brand store.</p>
+  <ul class="tags"><li>21+ age gate</li><li>4-pack bundle</li><li>store locator (Stockist)</li><li>wholesale inquiry form</li><li>state-based shipping</li></ul>
+  <a class="link" href="https://ascendatequila.com/" target="_blank" rel="noopener">ascendatequila.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>House of Rare</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Small-batch craft tequila brand selling limited releases and a barrel program.</p>
+  <ul class="tags"><li>DOB age gate</li><li>RARECask barrel-aging program</li><li>limited drops</li><li>accounts</li><li>newsletter</li></ul>
+  <a class="link" href="https://www.houseofraretequila.com/" target="_blank" rel="noopener">houseofraretequila.com ↗</a>
+</article></div></section><section class="group"><h3 class="gtitle">Home & Living<span>4</span></h3><div class="grid"><article class="card">
+  <div class="top"><h3>Cook &amp; Pan</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Dutch retailer of PFAS-free pans, pan sets, woks and bakeware.</p>
+  <ul class="tags"><li>Pan-finder quiz</li><li>set-deal bundles</li><li>gift cards/gift finder</li><li>60-day trial</li><li>reviews</li></ul>
+  <a class="link" href="https://cookandpan.com/" target="_blank" rel="noopener">cookandpan.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>HappyBed</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Online shop for washable coverless duvets, pillows and bedding.</p>
+  <ul class="tags"><li>30-night trial</li><li>1+1 promotions</li><li>multi-country selector</li><li>affiliate program</li><li>retail partners</li></ul>
+  <a class="link" href="https://thehappybed.com/" target="_blank" rel="noopener">thehappybed.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Samako</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Online store for vacuums, steam cleaners, stain removers and cleaning products.</p>
+  <ul class="tags"><li>Build-your-own bundles</li><li>multi-language/country</li><li>B2B and affiliate pages</li><li>free gift threshold</li></ul>
+  <a class="link" href="https://samakocleaning.com/en" target="_blank" rel="noopener">samakocleaning.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Dreaver</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Dutch shop for quiet, foldable walking treadmills with companion app.</p>
+  <ul class="tags"><li>Companion app</li><li>B2B page</li><li>refurbished collection</li><li>Klarna installments</li><li>knowledge center</li></ul>
+  <a class="link" href="https://dreaver.nl/" target="_blank" rel="noopener">dreaver.nl ↗</a>
+</article></div></section><section class="group"><h3 class="gtitle">Fashion<span>3</span></h3><div class="grid"><article class="card">
+  <div class="top"><h3>SneakerAsk</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Dutch online store for authentic Nike, Jordan, Adidas and New Balance sneakers.</p>
+  <ul class="tags"><li>Authenticity guarantee</li><li>loyalty rewards</li><li>outlet</li><li>set bundles</li><li>Klarna</li></ul>
+  <a class="link" href="https://sneakerask.nl/" target="_blank" rel="noopener">sneakerask.nl ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Marielle Stokkelaar</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Dutch women&#x27;s clothing brand known for Egyptian cotton dresses.</p>
+  <ul class="tags"><li>Multi-language &amp; multi-currency</li><li>quick view</li><li>reviews</li><li>returns portal</li></ul>
+  <a class="link" href="https://mariellestokkelaar.com/" target="_blank" rel="noopener">mariellestokkelaar.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Men&#x27;s Best Basics</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Premium men&#x27;s T-shirt and basics brand with multi-pack deals.</p>
+  <ul class="tags"><li>3/6/10-pack bundles</li><li>member discounts</li><li>multi-currency</li><li>fit guarantee</li><li>reviews</li></ul>
+  <a class="link" href="https://mensbestbasics.com/" target="_blank" rel="noopener">mensbestbasics.com ↗</a>
+</article></div></section><section class="group"><h3 class="gtitle">Sports, Mobility & Tech<span>4</span></h3><div class="grid"><article class="card">
+  <div class="top"><h3>ZEUZ</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Functional fitness gear for CrossFit, calisthenics and weightlifting.</p>
+  <ul class="tags"><li>Bundles/Mix &amp; Match</li><li>Build Your Gym</li><li>partner portal (B2B)</li><li>multi-language</li><li>pre-orders</li></ul>
+  <a class="link" href="https://www.zeuzfitness.com/en" target="_blank" rel="noopener">zeuzfitness.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Fatbikeskopen.nl</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Dutch fatbike and e-bike retailer with showrooms and service network.</p>
+  <ul class="tags"><li>Test-ride booking</li><li>B2B partner program</li><li>installment payments (Klarna/in3)</li><li>refurbished items</li><li>multi-language</li></ul>
+  <a class="link" href="https://www.fatbikeskopen.nl/" target="_blank" rel="noopener">fatbikeskopen.nl ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Car Essentials</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Dutch seller of CarPlay boxes, radios, dashcams and car accessories.</p>
+  <ul class="tags"><li>3-question product advisor quiz</li><li>license-plate vehicle lookup</li><li>country selector</li><li>blog</li></ul>
+  <a class="link" href="https://www.car-essentials.nl/" target="_blank" rel="noopener">car-essentials.nl ↗</a>
+</article><article class="card">
+  <div class="top"><h3>HIT</h3><span class="plat">Shopify</span></div>
+  <p class="desc">Wearable helmet sensor monitoring head impacts and concussion risk in sports.</p>
+  <ul class="tags"><li>Companion iOS/Android apps</li><li>crash detection SMS alerts</li><li>team app</li><li>data sharing</li></ul>
+  <a class="link" href="https://hitrecognition.com/" target="_blank" rel="noopener">hitrecognition.com ↗</a>
+</article></div></section>
+  </section>
+
+  <section class="sec" id="fullstack">
+    <h2>Full-stack, SaaS and apps</h2>
+    <p>Projects outside Shopify: a live car-auction platform with deposits and bidding, SaaS products and a companion mobile app.</p>
+    <div class="grid"><article class="card">
+  <div class="top"><h3>BUYNOW</h3><span class="plat">Next.js</span></div>
+  <p class="desc">Service buying US/Canadian auction vehicles and shipping them to Lithuania.</p>
+  <ul class="tags"><li>Live auctions &amp; buy-now lots</li><li>bidding</li><li>watchlist</li><li>accounts</li><li>Carfax/AutoCheck</li></ul>
+  <a class="link" href="https://buy-now.lt/" target="_blank" rel="noopener">buy-now.lt ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Renormalize</h3><span class="plat">Next.js · AWS</span></div>
+  <p class="desc">Engineering performance platform with gamification. AWS Lambda, S3, SES and WebSocket backend, Next.js and Electron apps, Stripe billing.</p>
+  <ul class="tags"><li>SaaS billing</li><li>Electron app</li><li>Integrations</li></ul>
+  <a class="link" href="https://www.renormalize.com/" target="_blank" rel="noopener">renormalize.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>WorkingLife</h3><span class="plat">React · NestJS</span></div>
+  <p class="desc">Career platform with assessments, profiles and resumes. Built NestJS services, schemas and third-party credential integrations.</p>
+  <ul class="tags"><li>B2B workspaces</li><li>Integrations</li><li>Jest</li></ul>
+  <a class="link" href="https://workinglife.com/en" target="_blank" rel="noopener">workinglife.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Go Monday</h3><span class="plat">Next.js</span></div>
+  <p class="desc">Swedish career platform with free guides and paid expert job advice.</p>
+  <ul class="tags"><li>Free accounts</li><li>booking of paid advisory sessions</li><li>Swish payments</li><li>union partnerships</li><li>podcast</li></ul>
+  <a class="link" href="https://www.gomonday.se/" target="_blank" rel="noopener">gomonday.se ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Hit Athlete app</h3><span class="plat">Android / iOS</span></div>
+  <p class="desc">Companion app for HIT helmet sensor tracking impacts and crash alerts.</p>
+  <ul class="tags"><li>G-force tracking</li><li>48h load indicator</li><li>crash detection SMS</li><li>data sharing</li><li>device locator</li></ul>
+  <a class="link" href="https://play.google.com/store/apps/details?id=com.app.hitpro&amp;hl=en" target="_blank" rel="noopener">Google Play ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Flowline</h3><span class="plat">NestJS · PostgreSQL</span></div>
+  <p class="desc">Operations platform for oil-industry and renewable-energy workflows. Built Excel-parsing APIs and optimized the data pipeline.</p>
+  <ul class="tags"><li>Excel import</li><li>Data pipeline</li><li>API</li></ul>
+  <a class="link" href="https://flowline.archerknight.com/" target="_blank" rel="noopener">flowline.archerknight.com ↗</a>
+</article><article class="card">
+  <div class="top"><h3>USA Cars</h3><span class="plat">Web</span></div>
+  <p class="desc">Web project for a car-import service in Poland.</p>
+  
+  <a class="link" href="https://usacars.net.pl/pl" target="_blank" rel="noopener">usacars.net.pl ↗</a>
+</article><article class="card">
+  <div class="top"><h3>Top Property</h3><span class="plat">Web</span></div>
+  <p class="desc">Property web project.</p>
+  
+  <a class="link" href="https://topproperty.eco/" target="_blank" rel="noopener">topproperty.eco ↗</a>
+</article><article class="card"><div class="top"><h3>DLX</h3><span class="plat">React · NestJS</span></div><p class="desc">Loan deal platform rewrite with agent, lender and borrower roles and strict per-role data access.</p><ul class="tags"><li>Permissions</li><li>PostgreSQL</li><li>Tests</li></ul><span class="link nda">Private project</span></article><article class="card"><div class="top"><h3>MyTravelBiz</h3><span class="plat">Node.js · AWS</span></div><p class="desc">Travel-business partner platform: tracking links, affiliate networks, cashback and referrals.</p><ul class="tags"><li>Affiliate integrations</li><li>Serverless</li></ul><span class="link nda">Private project</span></article><article class="card"><div class="top"><h3>Roofstreet</h3><span class="plat">Express · Docker</span></div><p class="desc">AI geolocation product that predicts users&#x27; next trips. Dockerized services and third-party data APIs.</p><ul class="tags"><li>APIs</li><li>Docker</li></ul><span class="link nda">Private project</span></article></div>
+  </section>
+
+  <section class="sec" id="experience">
+    <h2>Experience</h2>
+    <p>Five years of commercial development, from agency work to product teams.</p>
+    <div class="timeline">
+      <div class="job"><div class="when">Jul 2023 – now</div><div><h3>Code &amp; Care · Full-Stack Developer</h3><p>Flowline, WorkingLife, DLX, MyTravelBiz, Roofstreet. NestJS and Node.js services, PostgreSQL, data pipelines, role-based access and third-party integrations. In parallel: Shopify stores for DTC brands in the US, the UK and Europe.</p></div></div>
+      <div class="job"><div class="when">Jul 2022 – Jul 2023</div><div><h3>Renormalize · Full-Stack Developer</h3><p>AWS (Amplify, Lambda, S3, SES, WebSocket), Knex.js and Airbyte connectors on the backend, then Next.js and Electron on the frontend. Stripe billing.</p></div></div>
+      <div class="job"><div class="when">Nov 2021 – Jul 2022</div><div><h3>Aleannlab · Developer</h3><p>Projects for Sweden, Australia and the US: Stripe order and payment flows, Next.js 10 to 12 migration, CRM dashboards, Google Maps listings for 3,000 companies, AWS Cognito auth.</p></div></div>
+    </div>
+  </section>
+
+  <section class="sec" id="github">
+    <h2>Shipping every week</h2>
+    <p>1,832 contributions on GitHub in the last year, most of them in private client repositories.</p>
+    <a class="gh" href="https://github.com/andrewSuprun" target="_blank" rel="noopener"><img src="github-activity.png" alt="GitHub contribution graph: 1,832 contributions in the last year, with activity almost every week from October 2025 to October 2026" width="1882" height="526" loading="lazy"></a>
+  </section>
+
+  <section class="sec" id="skills">
+    <h2>What I work with</h2>
+    <p>The stack behind the projects above.</p>
+    <div class="skills">
+      <div class="skill"><h3>Shopify themes</h3><p>Online Store 2.0, Liquid, sections and blocks, metafields and metaobjects, JavaScript, AJAX Cart and Section Rendering API, Figma to theme.</p></div>
+      <div class="skill"><h3>Shopify Plus, apps and integrations</h3><p>Admin and Storefront GraphQL API, webhooks, custom apps, Checkout UI extensions, Functions, Recharge, Klaviyo, Hydrogen.</p></div>
+      <div class="skill"><h3>Backend</h3><p>Node.js, NestJS, Express, PostgreSQL, MongoDB, Redis, GraphQL, AWS (Lambda, S3, SES, Cognito), Docker, Stripe. Queues, idempotent webhook processing, payments and data sync.</p></div>
+      <div class="skill"><h3>Frontend and performance</h3><p>React, Next.js, TypeScript, Core Web Vitals, accessibility, A/B testing and conversion work.</p></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="eyebrow">Available for remote work</div>
+    <a class="mail" href="mailto:suprunand2016@gmail.com">suprunand2016@gmail.com</a>
+    <div class="cta"><a class="btn" href="https://github.com/andrewSuprun" target="_blank" rel="noopener">GitHub ↗</a></div>
+  </section>
+  <footer>© Andrii Suprun</footer>
+</div>
+</body>
+</html>
